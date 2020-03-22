@@ -30,7 +30,11 @@ class App extends React.Component {
     event.preventDefault();
 
     let taskArray = this.state.taskArray;
-    taskArray.push(this.state.newTask);
+    taskArray.push({
+      content: this.state.newTask,
+      id: taskArray.length +1,
+      isDone:false
+    });
 
     this.setState({
       taskArray: taskArray,
